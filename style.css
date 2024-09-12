@@ -1,5 +1,4 @@
 /* Global Styles */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,9 +14,8 @@ h1, h2, h3 {
   color: #00698f;
 }
 
-/* Overlay Container */
-
-.overlay-container {
+/* Shared Container Styles */
+.container {
   background-color: #fff;
   padding: 20px;
   border: 1px solid #ddd;
@@ -25,30 +23,26 @@ h1, h2, h3 {
   text-align: center;
 }
 
-/* Car Container */
-
-.car-container {
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
-}
-
 /* Image Gallery */
-
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 10px;
+  padding: 10px; /* Adds space around the gallery */
 }
 
 .image-gallery img {
   width: 100%;
   height: auto;
+  border-radius: 5px; /* Rounded corners */
+  transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
 }
 
 /* Price Container */
-
 .price-container {
   background-color: #fff;
   padding: 20px;
@@ -58,7 +52,6 @@ h1, h2, h3 {
 }
 
 /* Form Action */
-
 .form-action {
   text-align: center;
   margin-top: 20px;
@@ -90,13 +83,9 @@ h1, h2, h3 {
   text-decoration: none;
 }
 
-/* Additional Styles */
-
-.lamborghini-container, .rolls-royce-container, .ferrari-container {
-  margin-bottom: 20px;
-}
-
-.image-gallery video {
-  width: 100%;
-  height: auto;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .image-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }
